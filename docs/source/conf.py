@@ -40,7 +40,8 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'numpydoc',
-    'sphinx.ext.inheritance_diagram'
+    'sphinx.ext.inheritance_diagram',
+    'sphinx_rtd_dark_mode'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -59,6 +60,9 @@ exclude_patterns = []
 #
 html_theme = 'bootstrap'
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+
+# user starts in dark mode
+default_dark_mode = False
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
