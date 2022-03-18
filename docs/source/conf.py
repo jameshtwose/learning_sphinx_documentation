@@ -26,7 +26,6 @@ author = 'James Twose'
 # The full version, including alpha/beta/rc tags
 release = '0.0.0'
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -41,7 +40,10 @@ extensions = [
     'sphinx.ext.viewcode',
     'numpydoc',
     'sphinx.ext.inheritance_diagram',
-    'sphinx_rtd_dark_mode'
+    'sphinx_rtd_dark_mode',
+    'nbsphinx',
+    'nbsphinx_link',
+    'sphinx_gallery.load_style'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -50,7 +52,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['_build', '**.ipynb_checkpoints']
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -58,31 +60,36 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'bootstrap'
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+# html_theme = 'bootstrap'
+# html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
-# user starts in dark mode
 default_dark_mode = False
+
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
+# html_logo = "logo.png"
+# html_favicon = 'favicon.ico'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-html_theme_options = {
-    'source_link_position': "footer",
-    'bootswatch_theme': "simplex",
-    'navbar_title': " ",
-    'navbar_sidebarrel': False,
-    'bootstrap_version': "3",
-    'nosidebar': True,
-    'body_max_width': '100%',
-    'navbar_links': [
-        # ("Gallery", "examples/index"),
-        # ("Tutorial", "tutorial"),
-        ("Home", "index"),
-        # ("API", "api"),
-    ],
+# html_theme_options = {
+#     'source_link_position': "footer",
+#     'bootswatch_theme': "simplex",
+#     'navbar_title': " ",
+#     'navbar_sidebarrel': False,
+#     'bootstrap_version': "3",
+#     'nosidebar': True,
+#     'body_max_width': '100%',
+#     'navbar_links': [
+#         # ("Gallery", "examples/index"),
+#         # ("Tutorial", "tutorial"),
+#         ("Home", "index"),
+#         # ("API", "api"),
+#     ],
 
-}
+# }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -109,3 +116,10 @@ intersphinx_mapping = {
     'pandas': ('https://pandas.pydata.org/pandas-docs/stable/', None),
     'statsmodels': ('https://www.statsmodels.org/stable/', None)
 }
+
+# sphinx_gallery_conf = {
+#      'examples_dirs': '../../notebooks',   # path to your example scripts
+#      'gallery_dirs': 'auto_examples',  # path to where to save gallery generated output
+# }
+
+jupyter_execute_notebooks = "auto"

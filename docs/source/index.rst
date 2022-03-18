@@ -11,6 +11,13 @@ Welcome to learn_sphinx_doc's documentation!
    :caption: Contents:
 
 
+Example Notebooks Neuropy Functions
+-----------------------------------
+
+.. toctree::
+   utils.ipynb
+
+
 Contents
 --------
 
